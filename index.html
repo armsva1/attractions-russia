@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Достопримечательности России</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: url("background.jpg");
+        }
+
+        header {
+            background: lightblue;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            width: 20%;
+            float: left;
+            background: #e0f0ff;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: square;
+        }
+
+        nav a {
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        main {
+            margin-left: 20%;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🇷🇺 Достопримечательности России 🇷🇺</h1>
+
+    <marquee>
+        Добро пожаловать на сайт о самых красивых местах России!
+    </marquee>
+</header>
+
+<nav>
+    <h3>Меню</h3>
+    <ul>
+        <li><a href="#" onclick="loadPage('moscow')">Москва</a></li>
+        <li><a href="#" onclick="loadPage('spb')">Санкт-Петербург</a></li>
+        <li><a href="#" onclick="loadPage('suzdal')">Суздаль</a></li>
+        
+    </ul>
+</nav>
+
+<main id="content">
+    <h2>Добро пожаловать!</h2>
+    <p>Выберите город в меню слева.</p>
+
+    <h3 style="margin-top: 600px;" color="blue">Оставьте отзыв:</h3>
+    <form>
+        Имя:<br>
+        <input type="text"><br><br>
+
+        Комментарий:<br>
+        <textarea></textarea><br><br>
+
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Очистить">
+    </form>
+</main>
+
+<script>
+function loadPage(page) {
+    let content = document.getElementById("content");
+
+    if (page === "moscow") {
+        content.innerHTML = `
+        <h2>Москва</h2>
+        <img src="moscow.jpg">
+        <p>Москва — столица России. Здесь находятся Кремль и Красная площадь.</p>
+        <button onclick="location.reload()">Назад</button>
+        `;
+    }
+
+    if (page === "spb") {
+        content.innerHTML = `
+        <h2>Санкт-Петербург</h2>
+        <img src="spb.jpeg">
+        <p>Санкт-Петербург — культурная столица России, известен Эрмитажем.</p>
+        <button onclick="location.reload()">Назад</button>
+        `;
+    }
+
+    if (page === "suzdal") {
+        content.innerHTML = `
+        <h2>Суздаль</h2>
+        <img src="suzdal.jpg">
+        <p>Суздаль — древний город с множеством церквей и монастырей.</p>
+        <button onclick="location.reload()">Назад</button>
+        `;
+    }
+
+  
+}
+</script>
+
+</body>
+</html>
